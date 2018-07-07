@@ -20,6 +20,7 @@ import { SharedModule } from '@shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [AppComponent, ProfileComponent],
@@ -33,7 +34,8 @@ import { ProfileComponent } from './profile/profile.component';
     CoreModule,
     SharedModule,
     LayoutModule,
-    DashboardModule
+    DashboardModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  public user: any;
+  public user: Observable<firebase.User>;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -24,22 +24,26 @@ export class AuthService {
   }
 
   googleLogin() {
+    if (this.user) {
+      return;
+    }
     const provider = new auth.GoogleAuthProvider();
     this.afAuth.auth
       .signInWithPopup(provider)
       .then(credentials => {
-        this.user = credentials.user;
         const user: IProfile = {
           uid: credentials.user.uid,
           name: credentials.user.displayName,
           photoURL: credentials.user.photoURL,
           email: credentials.user.email
         };
-        this.afs.doc(`users/${this.user.uid}`).set(user);
-        this.user = of(this.user);
+        this.afs.doc(`users/${user.uid}`).set(user);
+        this.user = of(credentials.user);
       })
       .catch(err => console.error(err));
   }
+
+  withPasswordAndEmail(email: string, password: string) {}
 
   signOut() {
     this.afAuth.auth.signOut().then(() => (this.user = null));
