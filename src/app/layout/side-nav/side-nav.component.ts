@@ -19,11 +19,7 @@ export class SideNavComponent implements OnInit {
     private sideNavService: SideNavService,
     private breakingPoints: BreakingPointsService
   ) {
-<<<<<<< HEAD
     this.categories = [{ name: 'Frutas' }, { name: 'Verduras' },{name: "Granos"},{name: 'Fertilizantes '}, {name: 'Flores'}, {name:"Plantas o Arboles"}];
-=======
-    this.categories = [{ name: 'Frutas' }, { name: 'Verduras' },{name: "Granos"},{name: 'Fertilizantes '}];
->>>>>>> Profiles
     this.isHandset$ = this.breakingPoints.isHandset;
   }
 
