@@ -17,10 +17,13 @@ import { CoreModule } from '@core/core.module';
 
 // Feature Modules
 import { LayoutModule } from './layout/layout.module';
-import { ProdDescComponent } from './prod-desc/prod-desc.component';
+import { ProductDetailModule } from './product-detail/product-detail.module';
+
+
+
 
 @NgModule({
-  declarations: [AppComponent, ProdDescComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,7 +32,8 @@ import { ProdDescComponent } from './prod-desc/prod-desc.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     CoreModule,
-    LayoutModule
+    LayoutModule,
+    ProductDetailModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
