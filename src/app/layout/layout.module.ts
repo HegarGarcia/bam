@@ -6,7 +6,8 @@ import {
   MatToolbarModule,
   MatSidenavModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule,
+  MatMenuModule
 } from '@angular/material';
 
 import { NavComponent } from './nav/nav.component';
@@ -20,8 +21,9 @@ import { SideNavService } from './side-nav.service';
     CommonModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatIconModule,
     MatButtonModule,
-    MatIconModule
+    MatMenuModule
   ],
   exports: [NavComponent],
   providers: [SideNavService],
