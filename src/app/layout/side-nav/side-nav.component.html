@@ -1,3 +1,16 @@
-<p>
-  side-nav works!
-</p>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-list>
+      <h3 mat-subheader>
+        Categorias
+      </h3>
+      <mat-list-item *ngFor="let category of categories">
+        <h4 mat-line>{{category.name}}</h4>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    contenido
+  </mat-sidenav-content>
+</mat-sidenav-container>
