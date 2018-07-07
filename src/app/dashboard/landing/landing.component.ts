@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+public profiles: Array<any>
+
+  constructor() { 
+    this.profiles = [{title: "Hegar"}]
+  }
 
   ngOnInit() {
   }
