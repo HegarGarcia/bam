@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+
+  producto = {
+      titulo: 'titulo sjajsd',
+      proovedor: 'proovedor sdfa',
+      cantidad: 500,
+      medida: 'toneladas'
+    };
 }
