@@ -17,6 +17,7 @@ import { CoreModule } from '@core/core.module';
 
 // Feature Modules
 import { LayoutModule } from './layout/layout.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +29,8 @@ import { LayoutModule } from './layout/layout.module';
     AngularFirestoreModule,
     AngularFireAuthModule,
     CoreModule,
-    LayoutModule
+    LayoutModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
