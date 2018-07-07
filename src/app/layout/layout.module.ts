@@ -14,7 +14,7 @@ import {
 import { NavComponent } from './nav/nav.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-
+import { ProfilesModule } from "..//profiles/profiles.module";
 import { SideNavService } from './side-nav.service';
 
 @NgModule({
@@ -26,7 +26,8 @@ import { SideNavService } from './side-nav.service';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    ProfilesModule
   ],
   exports: [NavComponent],
   providers: [SideNavService],
