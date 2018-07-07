@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BreakingPointsService } from '@core/breaking-points/breaking-points.service';
 import { SideNavService } from '../side-nav.service';
 import { AuthService } from '@core/auth/auth.service';
 
@@ -12,12 +13,15 @@ import { Observable } from 'rxjs';
 })
 export class ToolbarComponent implements OnInit {
   public user: Observable<firebase.User>;
+  public isHandset$;
 
   constructor(
     public sideNavService: SideNavService,
-    public authService: AuthService
+    public authService: AuthService,
+    private breackingPoints: BreakingPointsService
   ) {
     this.user = authService.user;
+    this.isHandset$ = this.breackingPoints.isHandset;
   }
 
   ngOnInit() {}
