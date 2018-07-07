@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 
 // Core Module
 import { CoreModule } from '@core/core.module';
+import { SharedModule } from '@shared/shared.module';
 
 // Feature Modules
 import { LayoutModule } from './layout/layout.module';
@@ -28,6 +29,7 @@ import { LayoutModule } from './layout/layout.module';
     AngularFirestoreModule,
     AngularFireAuthModule,
     CoreModule,
+    SharedModule,
     LayoutModule
   ],
   providers: [],
