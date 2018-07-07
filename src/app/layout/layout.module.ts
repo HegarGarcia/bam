@@ -24,13 +24,9 @@ import { SideNavService } from './side-nav.service';
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
-<<<<<<< HEAD
     MatIconModule,
     MatMenuModule,
     MatListModule
-=======
-    MatMenuModule,
->>>>>>> Profiles
   ],
   exports: [NavComponent],
   providers: [SideNavService],
