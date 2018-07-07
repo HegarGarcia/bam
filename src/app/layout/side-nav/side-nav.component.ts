@@ -1,11 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatSidenav } from '@angular/material';
-<<<<<<< HEAD
 
 import { BreakingPointsService } from '@core/breaking-points/breaking-points.service';
-=======
->>>>>>> Joining Toolbar and Side Nav
 import { SideNavService } from '../side-nav.service';
 
 @Component({
