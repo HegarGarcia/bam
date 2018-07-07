@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProfileComponent } from './profile/profile.component';
-import { ProfileComponentDialog } from "./profile/profile.component";
+import { ProfileComponent, ProfileComponentDialog } from './profile/profile.component';
 
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     MatDialogModule,
-    ProfileComponent, 
-    ProfileComponentDialog
+    MatButtonModule
   ],
-  declarations: []
+  exports: [ProfileComponent, ProfileComponentDialog],
+  entryComponents: [ProfileComponentDialog],
+  declarations: [ProfileComponent, ProfileComponentDialog]
 })
-export class ProfilesModule { }
+export class ProfilesModule {}
