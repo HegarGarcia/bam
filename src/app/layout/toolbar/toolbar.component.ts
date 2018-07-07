@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SideNavService } from '../side-nav.service';
+import { AuthService } from '@core/auth/auth.service';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,7 +11,13 @@ import { SideNavService } from '../side-nav.service';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-  constructor(public sideNavService: SideNavService) {}
+  public user: Observable<firebase.User>;
+  constructor(
+    public sideNavService: SideNavService,
+    private auth: AuthService
+  ) {
+    this.user = auth.user;
+  }
 
   ngOnInit() {}
 }
