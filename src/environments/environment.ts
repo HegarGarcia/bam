@@ -9,7 +9,7 @@ export const environment = {
     authDomain: 'bam-mx.firebaseapp.com',
     databaseURL: 'https://bam-mx.firebaseio.com',
     projectId: 'bam-mx',
-    storageBucket: 'bam-mx.appspot.com',
+    storageBucket: '',
     messagingSenderId: '409700494601'
   }
 };
