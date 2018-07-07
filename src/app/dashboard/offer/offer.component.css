@@ -1,0 +1,9 @@
+.offer{
+  width: 100%;
+  padding: 32px;
+}
+.offer-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
