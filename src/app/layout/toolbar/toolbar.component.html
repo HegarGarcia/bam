@@ -1,9 +1,15 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button><mat-icon>menu</mat-icon></button>
+  <button mat-icon-button (click)="sideNavService.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
   <span class="padding16">Application Title</span>
 
-  <!-- This fills the remaining space of the current row -->
   <span class="fill-remaining-space"></span>
-  <button mat-button class="padding16"><mat-icon>shopping_cart</mat-icon></button>
-  <button  mat-button class="padding16">Iniciar sesion</button>
+
+  <button mat-button class="padding16">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+
+  <button mat-button class="padding16">Iniciar sesion</button>
 </mat-toolbar>

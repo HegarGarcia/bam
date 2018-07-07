@@ -14,6 +14,8 @@ import { NavComponent } from './nav/nav.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
+import { SideNavService } from './side-nav.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatButtonModule
   ],
   exports: [NavComponent],
+  providers: [SideNavService],
   declarations: [NavComponent, SideNavComponent, ToolbarComponent]
 })
 export class LayoutModule {}

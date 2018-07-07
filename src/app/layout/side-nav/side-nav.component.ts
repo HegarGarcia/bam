@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { MatSidenav } from '@angular/material';
+import { SideNavService } from '../side-nav.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -6,13 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent implements OnInit {
+  @ViewChild('sidenav') public sidenav: MatSidenav;
   public categories: [Category];
 
-  constructor() {
+  constructor(private sideNavService: SideNavService) {
     this.categories = [{ name: 'Naranjas' }];
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.sideNavService.setSidenav(this.sidenav);
+  }
 }
 
 interface Category {
