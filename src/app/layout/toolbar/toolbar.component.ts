@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BreakingPointsService } from '@core/breaking-points/breaking-points.service';
 import { SideNavService } from '../side-nav.service';
 import { AuthService } from '@core/auth/auth.service';
+import { BreakingPointsService } from '@core/breaking-points/breaking-points.service';
 
 import { Observable } from 'rxjs';
 

@@ -2,7 +2,6 @@
   flex: 1 1 auto;
 }
 
-<<<<<<< HEAD
 .toolbar--padding {
   padding: 16px;
 }
@@ -22,20 +21,3 @@
   overflow: hidden;
   border-radius: 50%;
 }
-=======
-.padding16 {
-    padding: 16px;
-}
-
-.image-cropper {
-    width: 56px;
-    height: 56px;
-    overflow: hidden;
-    border-radius: 50%;
-}
-
-.toolbar-img {
-    height: auto;
-    width: auto;
-} 
->>>>>>> Add image

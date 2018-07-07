@@ -1,10 +1,13 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav fixedInViewport="false" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!(isHandset$ | async)">
-
-    <div>
-      <!-- Login for Mobile -->
-    </div>
+  <mat-sidenav mode="side" opened #sidenav>
+    <mat-list>
+      <h3 mat-subheader>
+        Categorias
+      </h3>
+      <mat-list-item *ngFor="let category of categories">
+        <h4 mat-line>{{category.name}}</h4>
+      </mat-list-item>
+    </mat-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
