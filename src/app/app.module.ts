@@ -20,6 +20,7 @@ import { SharedModule } from '@shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LoginModule } from './login/login.module';
+import { ProductsModule } from "./products/products.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,7 +35,8 @@ import { LoginModule } from './login/login.module';
     SharedModule,
     LayoutModule,
     DashboardModule,
-    LoginModule
+    LoginModule,
+    ProductsModule
   ],
   bootstrap: [AppComponent]
 })

@@ -2,22 +2,17 @@
   flex: 1 1 auto;
 }
 
-.toolbar--padding {
-  padding: 16px;
+.toolbar--margin-left {
+  margin-left: 16px;
 }
 
-.toolbar--padding-left {
-  padding-left: 16px;
-}
-
-.toolbar__profile-photo--mask {
-  height: auto;
-  width: auto;
+.toolbar--margin-right {
+  margin-right: 16px;
 }
 
 .toolbar__profile-photo--img {
-  max-width: 56px;
-  max-height: 56px;
+  max-width: 32px;
+  max-height: 32px;
   overflow: hidden;
   border-radius: 50%;
 }

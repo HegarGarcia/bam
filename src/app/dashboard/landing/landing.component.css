@@ -1,12 +1,17 @@
-main {
+.dashboard {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+app-offer {
+  overflow: hidden;
+}
+
+.dashboard__offers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px;
   padding: 16px;
-}
-
-main > div {
-  place-content: center center;
 }
 
 h3 {
