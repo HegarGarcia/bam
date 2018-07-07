@@ -25,7 +25,7 @@ import { SideNavService } from './side-nav.service';
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   exports: [NavComponent],
   providers: [SideNavService],

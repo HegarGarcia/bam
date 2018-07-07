@@ -19,7 +19,7 @@ export class SideNavComponent implements OnInit {
     private sideNavService: SideNavService,
     private breakingPoints: BreakingPointsService
   ) {
-    this.categories = [{ name: 'Naranjas' }, { name: 'Manzanas' }];
+    this.categories = [{ name: 'Frutas' }, { name: 'Verduras' },{name: "Granos"},{name: 'Fertilizantes '}];
     this.isHandset$ = this.breakingPoints.isHandset;
   }
 
