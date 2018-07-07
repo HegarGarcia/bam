@@ -18,6 +18,7 @@ import { SharedModule } from '@shared/shared.module';
 
 // Feature Modules
 import { LayoutModule } from './layout/layout.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +31,8 @@ import { LayoutModule } from './layout/layout.module';
     AngularFireAuthModule,
     CoreModule,
     SharedModule,
-    LayoutModule
+    LayoutModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
