@@ -3,9 +3,7 @@ import { ProfilesModule } from './profiles.module';
 
 import { AngularFirestore } from 'angularfire2/firestore';
 
-@Injectable({
-  providedIn: ProfilesModule
-})
+@Injectable()
 export class ProfileService {
   constructor(private afs: AngularFirestore) {}
 

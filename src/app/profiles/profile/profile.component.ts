@@ -1,6 +1,7 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { ProfileService } from '../profile.service';
 
 export interface DialogData {
   uid: any;
@@ -17,22 +18,24 @@ export interface DialogData {
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  constructor(public dialog: MatDialog) {}
+  @Input() private uid: string;
+  constructor(public dialog: MatDialog, private profile: ProfileService) {}
 
   openDialog() {
-    this.dialog.open(ProfileComponentDialog, {
+    const data = this.profile.getProfile(this.uid);
+    this.dialog.open(ProfileDialogComponent, {
       width: '80%',
       height: '80%',
-      data: { animal: 'hola' }
+      data
     });
   }
 }
 
 @Component({
-  selector: 'profile-dialog',
+  selector: 'app-profile-dialog',
   templateUrl: './profile.dialog.html',
   styleUrls: ['./profile.dialog.css']
 })
-export class ProfileComponentDialog {
+export class ProfileDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 }
