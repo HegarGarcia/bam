@@ -5,16 +5,23 @@
 
   <span class="toolbar--padding">Application Title</span>
   <span class="fill-remaining-space"></span>
+
   <button mat-button class="toolbar--padding">
     <mat-icon>shopping_cart</mat-icon>
   </button>
-  <div *ngIf="user | async; then auth else guest"></div>
-  <ng-template #guest>
-    <button mat-button class="toolbar--padding">Iniciar sesion</button>
-  </ng-template>
-  <ng-template #auth>
-    <button mat-icon-button>
-      <mat-icon>account_circle</mat-icon>
+
+  <!-- Show login if there's no user -->
+  <div *ngIf="(user | async) as person; else guest">
+    <button mat-button [matMenuTriggerFor]="menu" class="toolbar--padding toolbar__profile-photo--mask">
+      <img class="toolbar__profile-photo--img" src="{{person.photoURL}}" alt="Profile photo">
     </button>
+
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item (click)="authService.signOut()">Cerrar Sesión</button>
+    </mat-menu>
+  </div>
+
+  <ng-template #guest>
+    <button mat-button class="toolbar--padding" (click)="authService.googleLogin()">Iniciar sesion</button>
   </ng-template>
 </mat-toolbar>

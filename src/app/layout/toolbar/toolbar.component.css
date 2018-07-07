@@ -6,14 +6,14 @@
   padding: 16px;
 }
 
-.toolbar__profile-img--cropper {
+.toolbar__profile-photo--mask {
+  height: auto;
+  width: auto;
+}
+
+.toolbar__profile-photo--img {
   max-width: 56px;
   max-height: 56px;
   overflow: hidden;
   border-radius: 50%;
-}
-
-.toolbar-img {
-  height: auto;
-  width: auto;
 }
