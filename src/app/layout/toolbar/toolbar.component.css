@@ -5,3 +5,15 @@
 .padding16 {
     padding: 16px;
 }
+
+.image-cropper {
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.toolbar-img {
+    height: auto;
+    width: auto;
+} 
