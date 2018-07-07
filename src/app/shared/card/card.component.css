@@ -1,0 +1,17 @@
+.card {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+.card-img {
+  width: auto;
+  height: auto;
+}
+
+.crop-img {
+  max-width: 64px;
+  max-height: 64px;
+  overflow: hidden;
+  border-radius: 50%;
+}

@@ -14,13 +14,15 @@ import { environment } from '../environments/environment';
 
 // Core Module
 import { CoreModule } from '@core/core.module';
+import { SharedModule } from '@shared/shared.module';
 
 // Feature Modules
 import { LayoutModule } from './layout/layout.module';
-import { ProdDescComponent } from './prod-desc/prod-desc.component';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
-  declarations: [AppComponent, ProdDescComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,9 +31,11 @@ import { ProdDescComponent } from './prod-desc/prod-desc.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     CoreModule,
-    LayoutModule
+    SharedModule,
+    LayoutModule,
+    DashboardModule,
+    LoginModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

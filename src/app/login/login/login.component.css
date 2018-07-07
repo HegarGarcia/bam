@@ -1,0 +1,30 @@
+main {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.login-form {
+  max-width: 250px;
+  max-height: 220px;
+  margin: 0 auto;
+}
+
+.login-form__field {
+  width: 100%;
+}
+
+.login-form__google {
+  max-width: 32px;
+}
+
+.login-form__google--wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login-form__submit {
+  margin: 0 auto;
+  text-align: center;
+}

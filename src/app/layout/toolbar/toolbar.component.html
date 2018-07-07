@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sideNavService.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="toolbar--padding-left">Application Title</span>
+  <span class="fill-remaining-space"></span>
+
+
+
+  <!-- Show login if there's no user -->
+  <div [hidden]="isHandset$ | async">
+    <div *ngIf="(user | async); then auth else guest"></div>
+
+    <ng-template #auth>
+        <button mat-icon-button>
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+    
+          <button mat-button [matMenuTriggerFor]="menu" class="toolbar--padding toolbar__profile-photo--mask">
+            <img class="toolbar__profile-photo--img" src="{{(user | async)?.photoURL}}" alt="Profile photo">
+          </button>
+    
+          <mat-menu #menu="matMenu" [overlapTrigger]="false">
+            <button mat-menu-item (click)="authService.signOut()">Cerrar Sesión</button>
+          </mat-menu>
+    </ng-template>
+
+    <ng-template #guest>
+      <button mat-button class="toolbar--padding" (click)="authService.googleLogin()">Iniciar sesion</button>
+    </ng-template>
+  </div>
+
+  <ng-template #hola>hola</ng-template>
+
+</mat-toolbar>
