@@ -21,6 +21,7 @@ import { SideNavService } from './side-nav.service';
     CommonModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatIconModule,
     MatButtonModule,
     MatIconModule,
     MatMenuModule
