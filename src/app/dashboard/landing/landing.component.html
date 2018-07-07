@@ -1,6 +1,6 @@
 <div class="dashboard">
   <app-offer></app-offer>
-  <div class="dashboard__offers">
+  <div [className]="(isHandset | async) ? 'dashboard__single-column' : 'dashboard__three-column'">
     <div>
       <h3 mat-subheader>Más Vendidos</h3>
       <app-card class="card" *ngFor="let profile of (feed$ | async)" [data]="profile"></app-card>

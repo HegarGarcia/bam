@@ -1,3 +1,8 @@
+.offert__wrapper {
+  max-width: 100%;
+  overflow: hidden;
+}
+
 .offer-img {
   width: 100%;
 }

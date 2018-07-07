@@ -1,6 +1,7 @@
 .dashboard {
+  max-width: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 10% 1fr;
 }
 
 app-offer {
@@ -9,8 +10,6 @@ app-offer {
 
 .dashboard__offers {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 50px;
   padding: 16px;
 }
 
@@ -22,4 +21,17 @@ h3 {
 
 .card-padding-top {
   padding-top: 16px;
+}
+
+.dashboard__three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 16px;
+}
+
+.dashboard__single-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 16px;
 }
