@@ -21,9 +21,9 @@
         </button>
 
         <mat-menu #menu="matMenu" [overlapTrigger]="false">
-          <app-profile uid="{{(user | async)?.uid}}">
-
-          </app-profile>
+          <button mat-menu-item>
+            <app-profile uid="{{(user | async)?.uid}}"></app-profile>
+          </button>
           <button mat-menu-item (click)="authService.signOut()">Cerrar Sesión</button>
         </mat-menu>
       </ng-template>

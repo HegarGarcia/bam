@@ -19,6 +19,7 @@ export interface DialogData {
 })
 export class ProfileComponent {
   @Input() private uid: string;
+  @Input() public auth: any;
   constructor(public dialog: MatDialog, private profile: ProfileService) {}
 
   openDialog() {
