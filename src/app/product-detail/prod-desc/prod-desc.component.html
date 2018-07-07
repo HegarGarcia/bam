@@ -8,12 +8,16 @@
     <h6>Fecha de plantacion: {{fechaPlantacion}}</h6>
     <h6>Fecha de Cosecha: {{fechaCosecha}}</h6>
     <h6>Cantidad disponible: {{cantidad}} {{medida}}</h6>
-    <h6>Precio por {{medida}}: {{cantidad}} </h6>
     <form [formGroup]="prodDescriptionForm">
-        <!--Value: {{ prodDescriptionForm.value | json }} -->
+        Value: {{ prodDescriptionForm.value | json }}
         <mat-slider thumbLabel [displayWith]="formatLabel" ng-value="value" formControlName="cantidadAComprar" tickInterval="1000"
             min="1" max="{{cantidad}}"></mat-slider>
     </form>
+
+    <div class="center">
+    </div>
+</div>
+
 <p style="text-align:center;">
     <span>
         <button mat-raised-button color="warn">Editar</button>
