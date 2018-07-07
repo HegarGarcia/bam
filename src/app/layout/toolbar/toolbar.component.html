@@ -3,13 +3,18 @@
     <mat-icon>menu</mat-icon>
   </button>
 
-  <span class="padding16">Application Title</span>
-
+  <span class="toolbar--padding">Application Title</span>
   <span class="fill-remaining-space"></span>
-
-  <button mat-button class="padding16">
+  <button mat-button class="toolbar--padding">
     <mat-icon>shopping_cart</mat-icon>
   </button>
-
-  <button mat-button class="padding16">Iniciar sesion</button>
+  <div *ngIf="user | async; then auth else guest"></div>
+  <ng-template #guest>
+    <button mat-button class="toolbar--padding">Iniciar sesion</button>
+  </ng-template>
+  <ng-template #auth>
+    <button mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </ng-template>
 </mat-toolbar>
