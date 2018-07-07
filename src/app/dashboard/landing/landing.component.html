@@ -1,16 +1,17 @@
+<app-offer></app-offer>
 <main>
   <div>
     <h3 mat-subheader>Mas Vendidos</h3>
-    <app-card class="card" *ngFor="let profile of profiles" [data]="profile"></app-card>
+    <app-card class="card" *ngFor="let profile of feed$" [data]="profile"></app-card>
   </div>
 
   <div>
-      <h3>Recien Agregados</h3>
-      <app-card class="card" *ngFor="let profile of profiles" [data]="profile"></app-card>
+    <h3>Recien Agregados</h3>
+    <app-card class="card" *ngFor="let profile of feed$" [data]="profile"></app-card>
   </div>
-  
+
   <div>
     <h3>Vendedores Verificados</h3>
-    <app-card class="card" *ngFor="let profile of profiles" [data]="profile"></app-card>
+    <app-card class="card" *ngFor="let profile of feed$" [data]="profile"></app-card>
   </div>
 </main>
