@@ -12,11 +12,12 @@ import { Observable } from 'rxjs';
 })
 export class ToolbarComponent implements OnInit {
   public user: Observable<firebase.User>;
+
   constructor(
     public sideNavService: SideNavService,
-    private auth: AuthService
+    public authService: AuthService
   ) {
-    this.user = auth.user;
+    this.user = authService.user;
   }
 
   ngOnInit() {}
