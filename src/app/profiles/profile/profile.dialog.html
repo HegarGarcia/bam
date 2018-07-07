@@ -1,6 +1,9 @@
-<div>
-    <h1 mat-dialog-title>Favorite Animal</h1>
-    <div mat-dialog-content>
-        My favorite animal is: {{(data | async)?.name}}
-    </div>
+<h1 mat-dialog-title>{{(data | async)?.name}}</h1>
+
+<div mat-dialog-content>
+    <p>My favorite animal is: {{(data | async)?.name}}</p>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">Cerrar</button>
 </div>
