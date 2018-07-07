@@ -1,11 +1,17 @@
-.example-card {
-    max-width: 400px;
-  }
-  
-  .corn-header-image {
-    background-image: url('icons/corn.png');
-    background-size: cover;
-    width: 20%;
-    height: auto;
-  }
-  
+.card {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+.card-img {
+  width: auto;
+  height: auto;
+}
+
+.crop-img {
+  max-width: 64px;
+  max-height: 64px;
+  overflow: hidden;
+  border-radius: 50%;
+}

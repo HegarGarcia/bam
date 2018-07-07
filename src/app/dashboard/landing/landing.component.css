@@ -1,5 +1,20 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css");
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 16px;
+}
 
-.main {
-    padding: 16px;
+main > div {
+  place-content: center center;
+}
+
+h3 {
+  padding: 16px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.card-padding-top {
+  padding-top: 16px;
 }
