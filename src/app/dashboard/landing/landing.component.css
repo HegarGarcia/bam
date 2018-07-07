@@ -1,20 +1,20 @@
 main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
-    padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 16px;
 }
 
 main > div {
-    place-content: center center;
+  place-content: center center;
 }
 
 h3 {
-    padding: 16px;
-    font-size: 24px;
-    text-align: center;
+  padding: 16px;
+  font-size: 24px;
+  text-align: center;
 }
 
-.card-padding-top{
-    padding-top: 16px;
+.card-padding-top {
+  padding-top: 16px;
 }

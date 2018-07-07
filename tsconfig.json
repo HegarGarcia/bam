@@ -15,7 +15,8 @@
       "@core/*": ["app/core/*"],
       "@shared/*": ["app/shared/*"],
       "@env/*": ["environments/*"],
-      "@assets/*":["assets/*"]
+      "@assets/*":["assets/*"],
+      "@interfaces/*": ["app/interfaces"]
     }
   }
 }
