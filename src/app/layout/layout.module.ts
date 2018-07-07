@@ -5,10 +5,10 @@ import { CommonModule } from '@angular/common';
 import {
   MatToolbarModule,
   MatSidenavModule,
-  MatListModule,
   MatIconModule,
   MatButtonModule,
-  MatMenuModule
+  MatMenuModule,
+  MatListModule
 } from '@angular/material';
 
 import { NavComponent } from './nav/nav.component';
@@ -22,10 +22,11 @@ import { SideNavService } from './side-nav.service';
     CommonModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule
+    MatIconModule,
+    MatMenuModule,
+    MatListModule
   ],
   exports: [NavComponent],
   providers: [SideNavService],

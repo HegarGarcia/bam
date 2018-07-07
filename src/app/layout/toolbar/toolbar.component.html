@@ -13,17 +13,17 @@
     <div *ngIf="(user | async); then auth else guest"></div>
 
     <ng-template #auth>
-        <button mat-icon-button>
-            <mat-icon>shopping_cart</mat-icon>
-          </button>
-    
-          <button mat-button [matMenuTriggerFor]="menu" class="toolbar--padding toolbar__profile-photo--mask">
-            <img class="toolbar__profile-photo--img" src="{{(user | async)?.photoURL}}" alt="Profile photo">
-          </button>
-    
-          <mat-menu #menu="matMenu" [overlapTrigger]="false">
-            <button mat-menu-item (click)="authService.signOut()">Cerrar Sesión</button>
-          </mat-menu>
+      <button mat-icon-button>
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menu" class="toolbar--padding toolbar__profile-photo--mask">
+        <img class="toolbar__profile-photo--img" src="{{(user | async)?.photoURL}}" alt="Profile photo">
+      </button>
+
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item (click)="authService.signOut()">Cerrar Sesión</button>
+      </mat-menu>
     </ng-template>
 
     <ng-template #guest>
