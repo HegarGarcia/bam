@@ -17,9 +17,10 @@ import { CoreModule } from '@core/core.module';
 
 // Feature Modules
 import { LayoutModule } from './layout/layout.module';
+import { ProdDescComponent } from './prod-desc/prod-desc.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ProdDescComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
