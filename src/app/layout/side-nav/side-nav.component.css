@@ -4,4 +4,12 @@ mat-sidenav-container {
 
 mat-sidenav {
   width: 256px;
+  display: grid;
+
+  grid-template-rows: 1fr 56px;
+}
+
+.nav__button {
+  text-align: left;
+  width: 100%;
 }
