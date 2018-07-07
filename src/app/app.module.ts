@@ -19,6 +19,7 @@ import { SharedModule } from '@shared/shared.module';
 // Feature Modules
 import { LayoutModule } from './layout/layout.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,9 +33,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     CoreModule,
     SharedModule,
     LayoutModule,
-    DashboardModule
+    DashboardModule,
+    LoginModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
