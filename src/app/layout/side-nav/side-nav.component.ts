@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatSidenav } from '@angular/material';
+
+import { BreakingPointsService } from '@core/breaking-points/breaking-points.service';
 import { SideNavService } from '../side-nav.service';
 
 @Component({
@@ -10,10 +12,15 @@ import { SideNavService } from '../side-nav.service';
 })
 export class SideNavComponent implements OnInit {
   @ViewChild('sidenav') public sidenav: MatSidenav;
-  public categories: [Category];
+  public categories: Array<Category>;
+  public isHandset$;
 
-  constructor(private sideNavService: SideNavService) {
-    this.categories = [{ name: 'Naranjas' }];
+  constructor(
+    private sideNavService: SideNavService,
+    private breakingPoints: BreakingPointsService
+  ) {
+    this.categories = [{ name: 'Naranjas' }, { name: 'Manzanas' }];
+    this.isHandset$ = this.breakingPoints.isHandset;
   }
 
   ngOnInit() {

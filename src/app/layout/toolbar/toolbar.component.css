@@ -6,6 +6,10 @@
   padding: 16px;
 }
 
+.toolbar--padding-left {
+  padding-left: 16px;
+}
+
 .toolbar__profile-photo--mask {
   height: auto;
   width: auto;
