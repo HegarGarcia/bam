@@ -14,7 +14,8 @@
     "paths": {
       "@core/*": ["app/core/*"],
       "@shared/*": ["app/shared/*"],
-      "@env/*": ["environments/*"]
+      "@env/*": ["environments/*"],
+      "@interfaces/*": ["app/interfaces"]
     }
   }
 }
