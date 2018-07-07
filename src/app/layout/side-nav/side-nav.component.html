@@ -6,9 +6,13 @@
         Categorias
       </h3>
       <mat-list-item *ngFor="let category of categories">
-        <button mat-button disableRipple>{{category.name}}</button>
+        <button class="nav__button" mat-button disableRipple>{{category.name}}</button>
       </mat-list-item>
     </mat-list>
+
+    <div>
+      <!-- Login for Mobile -->
+    </div>
   </mat-sidenav>
 
   <mat-sidenav-content>
