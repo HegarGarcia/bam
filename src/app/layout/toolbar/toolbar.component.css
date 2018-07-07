@@ -1,19 +1,19 @@
 .fill-remaining-space {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-.padding16 {
-    padding: 16px;
+.toolbar--padding {
+  padding: 16px;
 }
 
-.image-cropper {
-    width: 56px;
-    height: 56px;
-    overflow: hidden;
-    border-radius: 50%;
+.toolbar__profile-img--cropper {
+  max-width: 56px;
+  max-height: 56px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .toolbar-img {
-    height: auto;
-    width: auto;
-} 
+  height: auto;
+  width: auto;
+}
