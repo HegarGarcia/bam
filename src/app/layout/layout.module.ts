@@ -5,7 +5,9 @@ import { CommonModule } from '@angular/common';
 import {
   MatToolbarModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatIconModule,
+  MatButtonModule
 } from '@angular/material';
 
 import { NavComponent } from './nav/nav.component';
@@ -13,7 +15,14 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
-  imports: [CommonModule, MatToolbarModule, MatSidenavModule, MatListModule],
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule
+  ],
   exports: [NavComponent],
   declarations: [NavComponent, SideNavComponent, ToolbarComponent]
 })
