@@ -8,4 +8,5 @@ export interface IProduct {
   precioPorUnidad: number;
   clasificacion: string;
   unidad: string;
+  descripcion: string;
 }

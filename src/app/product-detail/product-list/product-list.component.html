@@ -1,0 +1,11 @@
+<div [className]="(isHandset | async) ? 'query--mobile' : 'query--desktop'">
+
+</div>
+
+<ais-instantsearch [config]="searchConfig">
+    <ais-search-box (change)="searchChanged($event)"></ais-search-box>
+
+    <ais-hits *ngIf="showResults">
+
+    </ais-hits>
+</ais-instantsearch>

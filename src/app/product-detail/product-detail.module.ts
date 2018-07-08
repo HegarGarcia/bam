@@ -1,22 +1,37 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { NgAisModule } from 'angular-instantsearch';
 
 import { ProdDescComponent } from './prod-desc/prod-desc.component';
-
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatSliderModule } from '@angular/material';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatDividerModule} from '@angular/material/divider';
 import { ProdBuyComponent } from './prod-buy/prod-buy.component';
-import {MatSelectModule} from '@angular/material/select';
-import {MatCheckboxModule} from '@angular/material/checkbox';
 
+import { ProductDetailService } from './product-detail.service';
 
+import {
+  MatSliderModule,
+  MatButtonModule,
+  MatGridListModule,
+  MatDividerModule,
+  MatSelectModule,
+  MatCheckboxModule
+} from '@angular/material';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, MatSliderModule, MatButtonModule, MatGridListModule, MatDividerModule, MatSelectModule, MatCheckboxModule],
-  exports: [ProdDescComponent],
-  declarations: [ProdDescComponent, ProdBuyComponent]
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    NgAisModule,
+    MatSliderModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatDividerModule,
+    MatSelectModule,
+    MatCheckboxModule
+  ],
+  declarations: [ProdDescComponent, ProdBuyComponent, ProductListComponent],
+  providers: [ProductDetailService]
 })
 export class ProductDetailModule {}
