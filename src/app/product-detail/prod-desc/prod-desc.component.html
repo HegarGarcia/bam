@@ -27,8 +27,8 @@
         </div><br>
         <form [formGroup]="prodDescriptionForm">
             <!--Value: {{ prodDescriptionForm.value | json }} -->
-            <mat-slider thumbLabel [displayWith]="formatLabel" ng-value="value" formControlName="cantidadAComprar" tickInterval="1000"
-                min="1" max="{{cantidad}}"></mat-slider>
+            <mat-slider thumbLabel [displayWith]="formatLabel" ng-value="value" formControlName="cantidadAComprar" tickInterval="{{intervalo}}" step='{{intervalo}}'
+                min="0" max="2000000"></mat-slider>
         </form>
         <p style="text-align:center;">
             <span>

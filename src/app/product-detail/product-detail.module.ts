@@ -5,18 +5,26 @@ import { ProdDescComponent } from './prod-desc/prod-desc.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
 import { ProdBuyComponent } from './prod-buy/prod-buy.component';
-import {MatSelectModule} from '@angular/material/select';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatCardModule} from '@angular/material/card';
-
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, MatSliderModule, MatButtonModule, MatGridListModule, MatDividerModule, MatSelectModule, MatCheckboxModule, MatCardModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatSliderModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatDividerModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatCardModule
+  ],
   exports: [ProdDescComponent],
   declarations: [ProdDescComponent, ProdBuyComponent]
 })

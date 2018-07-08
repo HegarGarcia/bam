@@ -12,10 +12,18 @@ export class ProdDescComponent implements OnInit {
   public fechaCosecha: Date;
   public cantidad: number;
   public unidad: string;
+  public intervalo: number;
+
   prodDescriptionForm: FormGroup;
   constructor(private fb: FormBuilder) {
     this.producto = 'Hola';
     this.nombreProveedor = 'hasdf';
+
+    if (this.unidad === 'kilogramo') {
+      this.intervalo = 10;
+    } else if (this.unidad === 'tonelada') {
+      this.intervalo = 1;
+    }
   }
 
   formatLabel(value: number | null) {
