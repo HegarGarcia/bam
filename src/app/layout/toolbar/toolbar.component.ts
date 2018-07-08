@@ -5,6 +5,7 @@ import { SideNavService } from '../side-nav.service';
 import { AuthService } from '@core/auth/auth.service';
 
 import { Observable } from 'rxjs';
+import { IProfile } from '../../interfaces/profiles';
 
 @Component({
   selector: 'app-toolbar',
@@ -12,7 +13,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-  public user: Observable<firebase.User>;
+  public user: Observable<IProfile>;
   public isHandset$;
 
   constructor(

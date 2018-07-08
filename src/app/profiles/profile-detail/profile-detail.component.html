@@ -1,0 +1,21 @@
+<form>
+  <mat-list>
+    <h3 mat-subheader>Informacion de contacto</h3>
+    <mat-list-item>
+      <h4 mat-line>Email</h4>
+      <p mat-line>{{(auth.user | async)?.email}}</p>
+    </mat-list-item>
+
+    <mat-list-item>
+      <h4 mat-line>Direccion</h4>
+      <p mat-line>{{(auth.user | async)?.address || 'No hay domicilio disponible'}}</p>
+    </mat-list-item>
+
+    <mat-list-item>
+      <h4 mat-line>Telefono</h4>
+      <p mat-line>{{(auth.user | async)?.phone || 'No hay teléno disponible'}}</p>
+    </mat-list-item>
+  </mat-list>
+</form>
+
+<button mat-raised-button color="primary">Editar</button>

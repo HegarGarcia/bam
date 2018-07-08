@@ -19,6 +19,9 @@ import { OtherProfileComponent,OtherProfileDialogComponent } from './other-profi
 
 import { ProfileService } from './profile.service';
 import { TabsComponent } from './tabs/tabs.component';
+import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
+import { ShopingDetailComponent } from './shoping-detail/shoping-detail.component';
+import { SalesDetailComponent } from './sales-detail/sales-detail.component';
 
 @NgModule({
   imports: [
@@ -39,6 +42,9 @@ import { TabsComponent } from './tabs/tabs.component';
     OtherProfileComponent,
     OtherProfileDialogComponent,
     TabsComponent,
+    ProfileDetailComponent,
+    ShopingDetailComponent,
+    SalesDetailComponent,
   ],
   providers: [ProfileService]
 })
