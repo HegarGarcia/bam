@@ -28,7 +28,6 @@ import { CategoryListComponent } from './category-list/category-list.component';
     ReactiveFormsModule,
     NgAisModule,
     SharedModule,
-
     MatSliderModule,
     MatButtonModule,
     MatGridListModule,
@@ -38,6 +37,5 @@ import { CategoryListComponent } from './category-list/category-list.component';
   ],
   declarations: [ProdDescComponent, ProdBuyComponent, ProductListComponent, CategoryListComponent],
   providers: [ProductDetailService]
-
 })
 export class ProductDetailModule {}
