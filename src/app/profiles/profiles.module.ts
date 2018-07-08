@@ -1,20 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from "@shared/shared.module";
 
 import {
   MatDialogModule,
   MatButtonModule,
   MatCardModule,
-  MatTabsModule
+  MatTabsModule,
+  MatListModule,
+  MatIconModule
 } from '@angular/material';
 
 import {
   ProfileComponent,
   ProfileDialogComponent
 } from './profile/profile.component';
-import { OtherProfileComponent } from './other-profile/other-profile.component';
+import { OtherProfileComponent,OtherProfileDialogComponent } from './other-profile/other-profile.component';
 
 import { ProfileService } from './profile.service';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
   imports: [
@@ -22,14 +26,19 @@ import { ProfileService } from './profile.service';
     MatDialogModule,
     MatButtonModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule,
+    MatIconModule,
+    SharedModule
   ],
-  exports: [ProfileComponent, ProfileDialogComponent],
-  entryComponents: [ProfileDialogComponent],
+  exports: [ProfileComponent, ProfileDialogComponent,OtherProfileComponent,OtherProfileDialogComponent],
+  entryComponents: [ProfileDialogComponent,OtherProfileDialogComponent],
   declarations: [
     ProfileComponent,
     ProfileDialogComponent,
-    OtherProfileComponent
+    OtherProfileComponent,
+    OtherProfileDialogComponent,
+    TabsComponent,
   ],
   providers: [ProfileService]
 })

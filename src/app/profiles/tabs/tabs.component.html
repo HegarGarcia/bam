@@ -1,0 +1,40 @@
+<div style="padding-top:16px">
+  <mat-tab-group mat-stretch-tabs style="max-width: 100%">
+    <mat-tab label="Perfil">
+      <div>
+        <mat-list>
+          <h3 mat-subheader>Informacion de contacto</h3>
+          <mat-list-item>
+            <h4 mat-line>Direccion</h4>
+            <p mat-line> direccion </p>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Email</h4>
+            <p mat-line> email </p>
+          </mat-list-item>
+          <mat-list-item>
+            <h4 mat-line>Telefono</h4>
+            <p mat-line> 33312345678 </p>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <button mat-raised-button color="primary">Editar</button>
+    </mat-tab>
+
+
+    <mat-tab label="Compras">
+        <div style="text-align: center; padding:10px">
+            <app-card class="card"></app-card>
+            <app-card class="card"></app-card>
+            <app-card class="card"></app-card>
+          </div>
+    </mat-tab>
+
+
+    <mat-tab label="Ventas">
+      <div style="text-align: center; padding:50px">
+        <button mat-raised-button color="primary" class="register-btn">Registrarse como vendedor</button>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

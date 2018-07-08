@@ -4,8 +4,22 @@
         <h1 mat-card-title>{{(data | async)?.name}}</h1>
         <p class="mat-card-content">{{(data | async)?.email}}</p>
     </div>
+    <mat-list>
+            <h3 mat-subheader>Informacion de contacto</h3>
+            <mat-list-item>
+              <h4 mat-line>Direccion</h4>
+              <p mat-line> direccion </p>
+            </mat-list-item>
+            <mat-list-item>
+              <h4 mat-line>Email</h4>
+              <p mat-line> email </p>
+            </mat-list-item>
+            <mat-list-item>
+              <h4 mat-line>Telefono</h4>
+              <p mat-line> 33312345678 </p>
+            </mat-list-item>
+    </mat-list>
     <button mat-icon-button [mat-dialog-close]="true" class="dialog__btn">
         <mat-icon>close</mat-icon>
     </button>
 </div>
-<app-tabs></app-tabs>
