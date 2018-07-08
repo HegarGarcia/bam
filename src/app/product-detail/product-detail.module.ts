@@ -20,6 +20,7 @@ import {
   MatCheckboxModule
 } from '@angular/material';
 import { ProductListComponent } from './product-list/product-list.component';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     MatSelectModule,
     MatCheckboxModule
   ],
-  declarations: [ProdDescComponent, ProdBuyComponent, ProductListComponent],
+  declarations: [ProdDescComponent, ProdBuyComponent, ProductListComponent, CategoryListComponent],
   providers: [ProductDetailService]
 })
 export class ProductDetailModule {}

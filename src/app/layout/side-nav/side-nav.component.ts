@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatSidenav } from '@angular/material';
 
-import { AuthService } from "@core/auth/auth.service";
+import { AuthService } from '@core/auth/auth.service';
 import { BreakingPointsService } from '@core/breaking-points/breaking-points.service';
 import { SideNavService } from '../side-nav.service';
 
@@ -21,7 +21,14 @@ export class SideNavComponent implements OnInit {
     private breakingPoints: BreakingPointsService,
     public auth: AuthService
   ) {
-    this.categories = [{ name: 'Frutas' }, { name: 'Verduras' },{name: "Granos"},{name: 'Fertilizantes '}, {name: 'Flores'}, {name:"Plantas o Arboles"}];
+    this.categories = [
+      { name: 'Frutas', link: '/category/fruta' },
+      { name: 'Verduras' },
+      { name: 'Granos' },
+      { name: 'Fertilizantes ' },
+      { name: 'Flores' },
+      { name: 'Plantas o Arboles' }
+    ];
     this.isHandset$ = this.breakingPoints.isHandset;
   }
 
@@ -32,4 +39,5 @@ export class SideNavComponent implements OnInit {
 
 interface Category {
   name: string;
+  link?: string;
 }
