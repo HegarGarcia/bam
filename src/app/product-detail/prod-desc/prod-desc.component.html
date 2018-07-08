@@ -14,12 +14,15 @@
         <mat-slider thumbLabel [displayWith]="formatLabel" ng-value="value" formControlName="cantidadAComprar" tickInterval="1000"
             min="1" max="{{cantidad}}"></mat-slider>
     </form>
-<p style="text-align:center;">
-    <span>
-        <button mat-raised-button color="warn">Editar</button>
-    </span>
-    &nbsp;&nbsp;&nbsp;
-    <span>
-        <button mat-raised-button color="green">Comprar {{prodDescriptionForm.value.cantidadAComprar | json }}</button>
-    </span>
-</p>
+    <p style="text-align:center;">
+        <span>
+            <button mat-raised-button color="warn">Editar</button>
+        </span>
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <button mat-raised-button color="green">Comprar {{prodDescriptionForm.value.cantidadAComprar | json }}</button>
+        </span>
+    </p>
+</div>
+
+<app-prod-buy></app-prod-buy>

@@ -8,12 +8,15 @@ import { MatSliderModule } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
+import { ProdBuyComponent } from './prod-buy/prod-buy.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, MatSliderModule, MatButtonModule, MatGridListModule, MatDividerModule],
+  imports: [CommonModule, ReactiveFormsModule, MatSliderModule, MatButtonModule, MatGridListModule, MatDividerModule, MatSelectModule, MatCheckboxModule],
   exports: [ProdDescComponent],
-  declarations: [ProdDescComponent]
+  declarations: [ProdDescComponent, ProdBuyComponent]
 })
 export class ProductDetailModule {}
