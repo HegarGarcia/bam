@@ -1,0 +1,18 @@
+<div class='main'>
+  <h2>Seleccionar Tarjeta</h2>
+  <mat-form-field>
+    <mat-select [(value)]='selected'>
+      <mat-option>None</mat-option>
+      <mat-option value="Visa">Visa xxxx-xxxx-xxxx-2865</mat-option>
+      <mat-option value="MasterCard">MasterCard xxxx-xxxx-xxxx-2342</mat-option>
+      <mat-option value="AmericanExpress">American Express xxxx-xxxx-xxxx-1234</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <p>Estoy deacuerdo con los terminos y condiciones</p>
+  <mat-checkbox class="example-margin" ng-value="checked">Acepto</mat-checkbox>
+  <br>
+  <div align='right'>
+    <button mat-stroked-button >Pagar con {{selected}}</button>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="main">
+    <div class="center">
+        <img align="middle" height="20%" width="20%" src="../../assets/corn.png">
+    </div>
+    <h2>{{Producto}}</h2>
+    <mat-divider></mat-divider>
+    <h4>{{NombreProveedor}}</h4>
+    <h6>Fecha de plantacion: {{fechaPlantacion}}</h6>
+    <h6>Fecha de Cosecha: {{fechaCosecha}}</h6>
+    <h6>Cantidad disponible: {{cantidad}} {{medida}}</h6>
+    <h6>Precio por {{medida}}: {{cantidad}} </h6>
+    <form [formGroup]="prodDescriptionForm">
+        <!--Value: {{ prodDescriptionForm.value | json }} -->
+        <mat-slider thumbLabel [displayWith]="formatLabel" ng-value="value" formControlName="cantidadAComprar" tickInterval="1000"
+            min="1" max="{{cantidad}}"></mat-slider>
+    </form>
+    <p style="text-align:center;">
+        <span>
+            <button mat-raised-button color="warn">Editar</button>
+        </span>
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <button mat-raised-button color="green">Comprar {{prodDescriptionForm.value.cantidadAComprar | json }}</button>
+        </span>
+    </p>
+</div>
+
+<app-prod-buy></app-prod-buy>
