@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { BreakingPointsService } from '@core/breaking-points/breaking-points.service';
+
 @Component({
   selector: 'app-prod-desc',
   templateUrl: './prod-desc.component.html',
@@ -14,8 +16,10 @@ export class ProdDescComponent implements OnInit {
   public unidad: string;
   public intervalo: number;
 
+  isHandset;
   prodDescriptionForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public breaking: BreakingPointsService) {
+    this.isHandset = this.breaking.isHandset;
     this.producto = 'Hola';
     this.nombreProveedor = 'hasdf';
 

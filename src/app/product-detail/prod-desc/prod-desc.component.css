@@ -53,3 +53,27 @@ h2 {
   grid-column-start: 2;
   grid-column-end: 4;
 }
+
+.flex-container {
+  display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.flex-container > div {
+  width: 100%;
+  margin: 10px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.centerimg {
+    max-width: 100%;
+    height: auto;
+}
+
+.mainSmall {
+    padding: 20px;
+  }
