@@ -21,6 +21,7 @@ import { LayoutModule } from './layout/layout.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LoginModule } from './login/login.module';
 import { ProductsModule } from "./products/products.module";
+import { ProfilesModule } from "./profiles/profiles.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,7 +37,8 @@ import { ProductsModule } from "./products/products.module";
     LayoutModule,
     DashboardModule,
     LoginModule,
-    ProductsModule
+    ProductsModule,
+    ProfilesModule
   ],
   bootstrap: [AppComponent]
 })

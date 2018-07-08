@@ -1,0 +1,11 @@
+<div mat-dialog-content [className]="(isHandset | async) ? 'dialog--mobile' : 'dialog--desktop'">
+    <img class="dialog__img" src="{{(data | async)?.photoURL}}" alt="Profile Photo">
+    <div [className]="(isHandset | async) ? 'dialog__title--mobile' : 'dialog__title--desktop'">
+        <h1 mat-card-title>{{(data | async)?.name}}</h1>
+        <p class="mat-card-content">{{(data | async)?.email}}</p>
+    </div>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">Close</button>
+</div>

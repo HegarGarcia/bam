@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AuthService } from '@core/auth/auth.service';
 
@@ -10,7 +11,11 @@ import { AuthService } from '@core/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder, public auth: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -24,6 +29,10 @@ export class LoginComponent implements OnInit {
         ]
       ]
     });
+  }
+
+  logInWithGoogle() {
+    this.auth.googleLogin().then(() => this.router.navigate(['/']));
   }
 
   get email() {
