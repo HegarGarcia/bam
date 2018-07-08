@@ -5,4 +5,5 @@ export interface IProfile {
   email: any;
   address?: any;
   phone?: any;
+  seller?: boolean;
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BreakingPointsService } from '@core/breaking-points/breaking-points.service';
 
 @Component({
   selector: 'app-tabs',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./tabs.component.css']
 })
 export class TabsComponent  {
-  constructor() { }
+  isHandset;
+  constructor(public breaking: BreakingPointsService) { 
+    this.isHandset = this.breaking.isHandset;
+  }
 }

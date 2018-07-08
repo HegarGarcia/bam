@@ -15,6 +15,8 @@ import { switchMap } from 'rxjs/operators';
 })
 export class AuthService {
   public user: Observable<IProfile>;
+  private userDetail: IProfile = null;
+  private auth;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -30,6 +32,8 @@ export class AuthService {
         }
       })
     );
+
+    this.user.subscribe(user => this.userDetail = user)
   }
 
   googleLogin(): Promise<any> {
@@ -40,7 +44,8 @@ export class AuthService {
         uid: credentials.user.uid,
         name: credentials.user.displayName,
         photoURL: credentials.user.photoURL,
-        email: credentials.user.email
+        email: credentials.user.email,
+        seller: false
       };
       this.afs.doc(`users/${user.uid}`).set(user, { merge: true });
       return this.location.back();
@@ -49,5 +54,9 @@ export class AuthService {
 
   signOut() {
     this.afAuth.auth.signOut();
+  }
+
+  get userValue() {
+    return this.userDetail;
   }
 }
