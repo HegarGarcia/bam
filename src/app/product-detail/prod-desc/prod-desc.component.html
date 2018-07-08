@@ -37,4 +37,18 @@
     </mat-card>
 </div>
 
-<app-prod-buy></app-prod-buy>
+    <h4>{{(user | async)?.name | titlecase}}</h4>
+    <h6>Fecha de plantacion: {{(product | async)?.fechaPlantada | date}}</h6>
+    <h6>Fecha de Cosecha: {{(product | async)?.fechaCosecha | date}}</h6>
+    <h6>Cantidad disponible: {{(product | async)?.cantidad | number}}</h6>
+    <h6>Precio por {{(product | async)?.nombre}}: {{(product | async)?.precioPorUnidad | currency}}</h6>
+
+    <div [hidden]="!(auth.user | async)">
+        <form [formGroup]="prodDescriptionForm">
+            <mat-slider thumbLabel ng-value="value" formControlName="cantidadAComprar" tickInterval="1000" min="1" max="{{(product | async)?.cantidad}}"></mat-slider>
+        </form>
+
+        <button mat-raised-button color="green">Comprar {{prodDescriptionForm.value.cantidadAComprar | number }}</button>
+        <app-prod-buy></app-prod-buy>
+    </div>
+</div>

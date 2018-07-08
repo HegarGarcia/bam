@@ -21,10 +21,9 @@ import { LayoutModule } from './layout/layout.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LoginModule } from './login/login.module';
 import { ProfilesModule } from './profiles/profiles.module';
-import { ProductDetailModule } from './product-detail/product-detail.module';
-import {MatSelectModule} from '@angular/material/select';
-import {MatCheckboxModule} from '@angular/material/checkbox';
 
+import { ProductDetailModule } from './product-detail/product-detail.module';
+import { AddProductModule } from "./add-product/add-product.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,8 +41,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     LoginModule,
     ProfilesModule,
     ProductDetailModule,
-    MatSelectModule,
-    MatCheckboxModule
+    AddProductModule
   ],
   bootstrap: [AppComponent]
 })

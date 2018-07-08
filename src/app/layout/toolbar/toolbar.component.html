@@ -4,23 +4,23 @@
       <mat-icon>menu</mat-icon>
     </button>
 
-    <a routerLink="/">
-      <span class="toolbar--margin-left">BAM</span>
-    </a>
+    <button class="toolbar--margin-left" mat-flat-button routerLink="/">
+      <span style="font-size: 24px">BAM</span>
+    </button>
 
     <span class="fill-remaining-space"></span>
 
-    <app-searchbar [hidden]="isHandset$ | async"></app-searchbar>
+    <!-- <app-searchbar [hidden]="isHandset$ | async"></app-searchbar> -->
 
-    <span class="fill-remaining-space"></span>
+    <!-- <span class="fill-remaining-space"></span> -->
 
     <!-- Show login if there's no user -->
     <div [hidden]="isHandset$ | async">
       <div *ngIf="(user | async); then auth else guest"></div>
 
       <ng-template #auth>
-        <button mat-icon-button>
-          <mat-icon>shopping_cart</mat-icon>
+        <button mat-icon-button routerLink="query">
+          <mat-icon>search</mat-icon>
         </button>
 
         <button mat-icon-button [matMenuTriggerFor]="menu" class="toolbar--margin-left toolbar--margin-right">
@@ -36,11 +36,12 @@
       </ng-template>
 
       <ng-template #guest>
+        <button mat-icon-button routerLink="query">
+          <mat-icon>search</mat-icon>
+        </button>
         <button mat-button class="toolbar--margin-left toolbar--margin-right" routerLink="/login" routerLinkActive="active">Iniciar sesion</button>
       </ng-template>
     </div>
-
-    <ng-template #hola>hola</ng-template>
 
   </mat-toolbar>
 </header>

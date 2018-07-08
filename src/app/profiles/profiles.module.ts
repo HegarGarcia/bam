@@ -15,7 +15,12 @@ import {
   ProfileComponent,
   ProfileDialogComponent
 } from './profile/profile.component';
-import { OtherProfileComponent, OtherProfileDialogComponent } from './other-profile/other-profile.component';
+
+import {
+  OtherProfileComponent,
+  OtherProfileDialogComponent
+} from './other-profile/other-profile.component';
+
 
 import { ProfileService } from './profile.service';
 import { TabsComponent } from './tabs/tabs.component';
@@ -34,7 +39,12 @@ import { SalesDetailComponent } from './sales-detail/sales-detail.component';
     MatIconModule,
     SharedModule
   ],
-  exports: [ProfileComponent, ProfileDialogComponent, OtherProfileComponent, OtherProfileDialogComponent],
+  exports: [
+    ProfileComponent,
+    ProfileDialogComponent,
+    OtherProfileComponent,
+    OtherProfileDialogComponent
+  ],
   entryComponents: [ProfileDialogComponent, OtherProfileDialogComponent],
   declarations: [
     ProfileComponent,
@@ -44,8 +54,8 @@ import { SalesDetailComponent } from './sales-detail/sales-detail.component';
     TabsComponent,
     ProfileDetailComponent,
     ShopingDetailComponent,
-    SalesDetailComponent,
+    SalesDetailComponent
   ],
   providers: [ProfileService]
 })
-export class ProfilesModule { }
+export class ProfilesModule {}
