@@ -21,7 +21,7 @@
     <button mat-button [matMenuTriggerFor]="menu" class="mobile-login__button">
       <div class="mobile-login">
         <img src="{{(auth.user | async)?.photoURL}}" alt="Profile Photo" class="mobile-login__photo">
-        <p>{{(auth.user | async)?.displayName}}</p>
+        <p>{{(auth.user | async)?.name}}</p>
       </div>
     </button>
 
