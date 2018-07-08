@@ -9,4 +9,6 @@
     </button>
 </div>
 <app-tabs></app-tabs>
-<button mat-raised-button color="primary" (click)="closeDialog()">Vender</button>
+<div [hidden]="!(auth.user | async)?.seller">
+    <button mat-raised-button color="primary" (click)="closeDialog()">Vender</button>
+</div>

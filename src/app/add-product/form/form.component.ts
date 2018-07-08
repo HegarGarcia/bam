@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BreakingPointsService } from '@core/breaking-points/breaking-points.service';
+
+import { AngularFirestore } from 'angularfire2/firestore';
+
+import { AuthService } from '@core/auth/auth.service';
 
 export interface Units {
   value: string;
-  viewValue: string
+  viewValue: string;
 }
 
 @Component({
@@ -13,23 +17,46 @@ export interface Units {
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-  myForm: FormGroup;
+  public productForm: FormGroup;
   isHandset;
-  constructor(public breaking: BreakingPointsService) {
+
+  public units: Units[] = [
+    { value: 'kg', viewValue: 'Kilos' },
+    { value: 'ton', viewValue: 'Toneladas' }
+  ];
+
+  public categories: Units[] = [
+    { value: 'fruta', viewValue: 'Frutas' },
+    { value: 'verdura', viewValue: 'Verduras' },
+    { value: 'semillas', viewValue: 'Granos' },
+    { value: 'fertilizante', viewValue: 'Fertilizante' },
+    { value: 'flores', viewValue: 'Flores' },
+    { value: 'plantas', viewValue: 'Plantas o Árboles' }
+  ];
+
+  constructor(
+    private fb: FormBuilder,
+    public breaking: BreakingPointsService,
+    private afs: AngularFirestore,
+    private auth: AuthService
+  ) {
     this.isHandset = this.breaking.isHandset;
   }
 
-  ngOnInit(){}
-}
+  ngOnInit() {
+    this.productForm = this.fb.group({
+      nombre: ['', [Validators.required]],
+      cantidad: [0, [Validators.required, Validators.min(1)]],
+      unidades: ['kg', [Validators.required]],
+      categoria: ['', [Validators.required]],
+      descripcion: ['', []]
+    });
+  }
 
-@Component({
-  selector: 'app-form-select',
-  templateUrl: './form.select.html',
-  styleUrls: ['./form.select.css'],
-})
-export class FormSelectComponent {
-  units: Units[] = [
-    {value: 'kg', viewValue: 'Kilos'},
-    {value: 'ton', viewValue: 'Toneladas'},
-  ];
+  addProduct() {
+    const value = this.productForm.value;
+    console.log(this.auth.userValue.uid);
+    this.afs.collection('productos').add({ ...value, propietario: this.auth.userValue.uid });
+    this.productForm.reset();
+  }
 }

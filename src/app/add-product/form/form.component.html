@@ -1,24 +1,40 @@
-<div class="login">
+<div class="form">
   <div [className]="(isHandset | async) ? 'form-mobile' : 'form-desktop'">
-    <mat-card>
-      <form [formGroup]="" style="text-align: center">
-        <mat-form-field class="form-content">
-          <input matInput formControName="name" placeholder="Nombre" required>
+    <mat-card >
+      <form [formGroup]="productForm" class="grid" (ngSubmit)="addProduct()">
+
+        <mat-form-field class="form-field">
+          <input matInput formControlName="nombre" placeholder="Nombre" type="text">
         </mat-form-field>
-        <br>
-        <mat-form-field class="form-content">
-          <input matInput formControName="cantidad" type="number" placeholder="Cantidad" required>
+
+        <mat-form-field class="form-field">
+          <input matInput formControlName="cantidad" type="number" placeholder="Cantidad">
         </mat-form-field>
-        <br>
-        <app-form-select></app-form-select>
-        <br>
-        <mat-form-field class="form-content">
-          <textarea matInput formControName="desc" placeholder="Descripcion"></textarea>
+
+        <mat-form-field class="form-select">
+          <mat-select formControlName="unidades" placeholder="Unidades">
+            <mat-option *ngFor="let unit of units" [value]="unit.value">
+              {{unit.viewValue}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
-        <br>
-        <div class="login-form__google--wrapper">
-          <button mat-raised-button type="submit" color="primary" (click)="addProduct()">Aceptar</button>
+
+        <mat-form-field class="form-select">
+          <mat-select formControlName="categoria" placeholder="Categorias">
+            <mat-option *ngFor="let category of categories" [value]="category.value">
+              {{category.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <textarea matInput formControlName="descripcion" placeholder="Descripcion"></textarea>
+        </mat-form-field>
+
+        <div class="product-form--wrapper form-field">
+          <button mat-raised-button [disabled]="productForm.invalid" type="submit" color="primary" (click)="addProduct()">Aceptar</button>
         </div>
+
       </form>
     </mat-card>
   </div>

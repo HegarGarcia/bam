@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormComponent, FormSelectComponent } from './form/form.component';
+import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {
@@ -29,6 +29,6 @@ import {
     MatSelectModule,
     ReactiveFormsModule
   ],
-  declarations: [FormComponent, FormSelectComponent]
+  declarations: [FormComponent]
 })
 export class AddProductModule {}
