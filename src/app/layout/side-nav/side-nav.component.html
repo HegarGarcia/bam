@@ -11,7 +11,7 @@
         Categorias
       </h3>
       <mat-list-item *ngFor="let category of categories">
-        <button class="nav__button" mat-button disableRipple>{{category.name}}</button>
+        <button class="nav__button" mat-button disableRipple [routerLink]="category.link">{{category.name}}</button>
       </mat-list-item>
     </mat-list>
 

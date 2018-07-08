@@ -16,4 +16,8 @@ export class ProductDetailService {
   getUser(id): Observable<IProfile> {
     return this.afs.doc<IProfile>(`users/${id}`).valueChanges();
   }
+
+  category(query) {
+    return this.afs.collection<IProduct>('productos', ref => ref.where('tipo', '==', query)).valueChanges();
+  }
 }

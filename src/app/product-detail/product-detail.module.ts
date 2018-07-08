@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { SharedModule } from '@shared/shared.module';
+
 import { NgAisModule } from 'angular-instantsearch';
 
 import { ProdDescComponent } from './prod-desc/prod-desc.component';
@@ -18,12 +20,14 @@ import {
   MatCheckboxModule
 } from '@angular/material';
 import { ProductListComponent } from './product-list/product-list.component';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     NgAisModule,
+    SharedModule,
     MatSliderModule,
     MatButtonModule,
     MatGridListModule,
@@ -31,7 +35,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     MatSelectModule,
     MatCheckboxModule
   ],
-  declarations: [ProdDescComponent, ProdBuyComponent, ProductListComponent],
+  declarations: [ProdDescComponent, ProdBuyComponent, ProductListComponent, CategoryListComponent],
   providers: [ProductDetailService]
 })
 export class ProductDetailModule {}
