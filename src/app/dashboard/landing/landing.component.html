@@ -3,17 +3,17 @@
   <div [className]="(isHandset | async) ? 'dashboard__single-column' : 'dashboard__three-column'">
     <div>
       <h3 mat-subheader>Más Vendidos</h3>
-      <app-card class="card" *ngFor="let profile of (feed$ | async)" [data]="profile"></app-card>
+      <app-card class="card" *ngFor="let product of best" [data]="product"></app-card>
     </div>
 
     <div>
       <h3>Recién Agregados</h3>
-      <app-card class="card" *ngFor="let profile of (feed$ | async)" [data]="profile"></app-card>
+      <app-card class="card" *ngFor="let product of newest" [data]="product"></app-card>
     </div>
 
     <div>
       <h3>Vendedores Verificados</h3>
-      <app-card class="card" *ngFor="let profile of (feed$ | async)" [data]="profile"></app-card>
+      <app-card class="card" *ngFor="let product of verified" [data]="product"></app-card>
     </div>
   </div>
 </div>

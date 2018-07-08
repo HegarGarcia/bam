@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IProduct } from '@interfaces/product';
 
 @Component({
   selector: 'app-card',
@@ -6,16 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() data: ICard;
+  @Input() data: IProduct;
 
   constructor() {}
 
   ngOnInit() {}
-}
-
-interface ICard {
-  title: string;
-  proveedor: string;
-  cantidad: number;
-  medida: string;
 }
