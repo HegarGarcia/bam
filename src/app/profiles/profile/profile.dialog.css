@@ -1,2 +1,37 @@
-.dialog__content {
+.dialog--desktop {
+  display: grid;
+  grid: 1fr / repeat(12, 1fr);
+  grid-gap: 1em;
+}
+
+.dialog--mobile {
+  display: grid;
+  grid: 1fr / 1fr;
+  grid-gap: 0.5em;
+}
+
+.dialog__title--mobile {
+  place-self: center;
+  grid: 2 / 1 / 3 / 2;
+
+  text-align: center;
+}
+
+.dialog__title--desktop {
+  place-self: center;
+  grid-area: 1 / 2 / 2 / 4;
+}
+
+.dialog__img {
+  grid: 1 / 1 / 2 / 2;
+  place-self: center;
+
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: red;
 }

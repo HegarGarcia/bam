@@ -23,12 +23,9 @@ export class AuthService {
     this.user = this.afAuth.authState;
   }
 
-  googleLogin() {
-    if (this.user) {
-      return;
-    }
+  googleLogin(): Promise<any> {
     const provider = new auth.GoogleAuthProvider();
-    this.afAuth.auth
+    return this.afAuth.auth
       .signInWithPopup(provider)
       .then(credentials => {
         const user: IProfile = {
@@ -39,6 +36,7 @@ export class AuthService {
         };
         this.afs.doc(`users/${user.uid}`).set(user);
         this.user = of(credentials.user);
+        return this.user;
       })
       .catch(err => console.error(err));
   }

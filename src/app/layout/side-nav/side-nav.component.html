@@ -1,6 +1,11 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav fixedInViewport="false" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!(isHandset$ | async)">
+  <mat-sidenav #sidenav [fixedInViewport]="(isHandset$ | async)" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+
+    <div [hidden]="!(isHandset$ | async)">
+      <div *ngIf="(auth.user | async); then authenticated else guest"></div>
+    </div>
+
     <mat-list>
       <h3 mat-subheader>
         Categorias
@@ -10,13 +15,30 @@
       </mat-list-item>
     </mat-list>
 
-    <div>
-      <!-- Login for Mobile -->
-    </div>
   </mat-sidenav>
 
+  <ng-template #authenticated>
+    <button mat-button [matMenuTriggerFor]="menu" class="mobile-login__button">
+      <div class="mobile-login">
+        <img src="{{(auth.user | async)?.photoURL}}" alt="Profile Photo" class="mobile-login__photo">
+        <p>{{(auth.user | async)?.displayName}}</p>
+      </div>
+    </button>
+
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item>
+        <app-profile uid="{{(auth.user | async)?.uid}}"></app-profile>
+      </button>
+      <button mat-menu-item (click)="auth.signOut()">Cerrar Sesión</button>
+    </mat-menu>
+  </ng-template>
+
+  <ng-template #guest>
+    <button mat-button class="side-nav__login" routerLink="/login" (click)="sidenav.toggle()">Iniciar sesion</button>
+  </ng-template>
+
   <mat-sidenav-content>
-    <main>
+    <main [className]="(isHandset$ | async) ? 'mobile' : 'desktop'">
       <ng-content></ng-content>
     </main>
   </mat-sidenav-content>
