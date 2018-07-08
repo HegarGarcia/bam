@@ -20,8 +20,7 @@ import { SharedModule } from '@shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LoginModule } from './login/login.module';
-import { ProfilesModule } from './profiles/profiles.module';
-
+import { ProfilesModule } from "./profiles/profiles.module";
 import { ProductDetailModule } from './product-detail/product-detail.module';
 import { AddProductModule } from "./add-product/add-product.module";
 

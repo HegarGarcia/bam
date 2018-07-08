@@ -1,41 +1,11 @@
-<div [className]="(isHandset | async) ? 'mainSmall' : 'main'">
-    <mat-card>
-        <div [className]="(isHandset | async) ? 'flex-container' : 'grid-container'">
-            <div class="item1">
-                    <img class="centerimg"  src="../../assets/cultivo.jfif">
-            </div>
-            <div class="item2">
-                <h2>{{producto}}</h2>
-            </div>
-            <div class="item3">
-                <h4>Nombre de Proovedor: {{nombreProveedor}}</h4>
-            </div>
-            <div class="item4">
-                <h6>Fecha de plantacion: {{fechaPlantacion}}</h6>
-            </div>
-            <div class="item5">
-                <h6>Fecha de Cosecha: {{fechaCosecha}}</h6>
-            </div>
-            <div class="item6">
-                <h6>Cantidad disponible: {{cantidad}} {{unidad}}</h6>
-            </div>
-            <div class="item7">
-                <h6>Precio por {{unidad}}: {{cantidad}} </h6>
-            </div>
-        </div><br>
-        <form [formGroup]="prodDescriptionForm">
-            <!--Value: {{ prodDescriptionForm.value | json }} -->
-            <mat-slider thumbLabel [displayWith]="formatLabel" ng-value="value" formControlName="cantidadAComprar" tickInterval="{{intervalo}}" step='{{intervalo}}'
-                min="0" max="2000000"></mat-slider>
-        </form>
-        <p style="text-align:center;">
-            <span>
-                <button mat-raised-button color="green">Comprar {{prodDescriptionForm.value.cantidadAComprar | json }} {{unidad}}</button>
-            </span>
-        </p>
+<div class="main">
+    <div class="center">
+        <img align="middle" height="20%" width="20%" src="../../assets/corn.png">
+    </div>
 
-    </mat-card>
-</div>
+    <h2>{{(product | async)?.nombre}}</h2>
+
+    <mat-divider></mat-divider>
 
     <h4>{{(user | async)?.name | titlecase}}</h4>
     <h6>Fecha de plantacion: {{(product | async)?.fechaPlantada | date}}</h6>
