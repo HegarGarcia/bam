@@ -16,7 +16,7 @@ export interface Units {
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent {
+export class FormComponent implements OnInit {
   public productForm: FormGroup;
   isHandset;
 
@@ -49,14 +49,17 @@ export class FormComponent {
       cantidad: [0, [Validators.required, Validators.min(1)]],
       unidades: ['kg', [Validators.required]],
       categoria: ['', [Validators.required]],
-      descripcion: ['', []]
+      descripcion: ['', []],
+      costo: [0, [Validators.required]]
     });
   }
 
   addProduct() {
     const value = this.productForm.value;
     console.log(this.auth.userValue.uid);
-    this.afs.collection('productos').add({ ...value, propietario: this.auth.userValue.uid });
+    this.afs
+      .collection('productos')
+      .add({ ...value, propietario: this.auth.userValue.uid });
     this.productForm.reset();
   }
 }

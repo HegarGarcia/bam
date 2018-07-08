@@ -1,6 +1,6 @@
 <div class="form">
   <div [className]="(isHandset | async) ? 'form-mobile' : 'form-desktop'">
-    <mat-card >
+    <mat-card>
       <form [formGroup]="productForm" class="grid" (ngSubmit)="addProduct()">
 
         <mat-form-field class="form-field">
@@ -26,6 +26,11 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <input matInput type="number" formControlName="costo" placeholder="Costo Unitario">
+        </mat-form-field>
+
 
         <mat-form-field class="form-field">
           <textarea matInput formControlName="descripcion" placeholder="Descripcion"></textarea>
