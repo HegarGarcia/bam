@@ -6,16 +6,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./prod-desc.component.css']
 })
 export class ProdDescComponent implements OnInit {
-  public Producto: string;
-  public NombreProveedor: string;
+  public producto: string;
+  public nombreProveedor: string;
   public fechaPlantacion: Date;
   public fechaCosecha: Date;
   public cantidad: number;
-  public medida: string;
+  public unidad: string;
   prodDescriptionForm: FormGroup;
   constructor(private fb: FormBuilder) {
-    this.Producto = 'Hola';
-    this.NombreProveedor = 'hasdf';
+    this.producto = 'Hola';
+    this.nombreProveedor = 'hasdf';
   }
 
   formatLabel(value: number | null) {

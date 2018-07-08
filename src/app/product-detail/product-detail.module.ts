@@ -11,11 +11,12 @@ import {MatDividerModule} from '@angular/material/divider';
 import { ProdBuyComponent } from './prod-buy/prod-buy.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
 
 
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, MatSliderModule, MatButtonModule, MatGridListModule, MatDividerModule, MatSelectModule, MatCheckboxModule],
+  imports: [CommonModule, ReactiveFormsModule, MatSliderModule, MatButtonModule, MatGridListModule, MatDividerModule, MatSelectModule, MatCheckboxModule, MatCardModule],
   exports: [ProdDescComponent],
   declarations: [ProdDescComponent, ProdBuyComponent]
 })
