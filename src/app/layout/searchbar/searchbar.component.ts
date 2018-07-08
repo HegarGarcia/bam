@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.css'],
 })
-export class SearchbarComponent {}
+export class SearchbarComponent {
+  value: string = 'Buscar...';
+}
