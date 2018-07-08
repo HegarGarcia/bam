@@ -3,6 +3,32 @@ import * as admin from 'firebase-admin';
 
 admin.initializeApp();
 
+const env = functions.config();
+
+import * as algoliasearch from 'algoliasearch';
+const client = algoliasearch(env.algolia.appid, env.algolia.apikey);
+const index = client.initIndex('products');
+
+export const createAlgolia = functions.firestore
+  .document('productos/{prodId}')
+  .onCreate(snap => {
+    const data = snap.data();
+    const objectId = snap.id;
+
+    return index.addObject({
+      objectId,
+      ...data
+    });
+  });
+
+export const deleteAlgolia = functions.firestore
+  .document('productos/{prodId}')
+  .onDelete(snap => {
+    const objectId = snap.id;
+
+    return index.deleteObject(objectId);
+  });
+
 export const setValidation = functions.firestore
   .document('productos/{prodId}')
   .onCreate(async snap => {
