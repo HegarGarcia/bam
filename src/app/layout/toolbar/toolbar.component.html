@@ -4,9 +4,14 @@
       <mat-icon>menu</mat-icon>
     </button>
 
-    <span class="toolbar--margin-left">BAM</span>
+    <a routerLink="/">
+      <span class="toolbar--margin-left">BAM</span>
+    </a>
+
     <span class="fill-remaining-space"></span>
+
     <app-searchbar [hidden]="isHandset$ | async"></app-searchbar>
+
     <span class="fill-remaining-space"></span>
 
     <!-- Show login if there's no user -->
