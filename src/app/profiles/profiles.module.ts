@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from "@shared/shared.module";
+import { SharedModule } from '@shared/shared.module';
 
 import {
   MatDialogModule,
@@ -15,7 +15,10 @@ import {
   ProfileComponent,
   ProfileDialogComponent
 } from './profile/profile.component';
-import { OtherProfileComponent,OtherProfileDialogComponent } from './other-profile/other-profile.component';
+import {
+  OtherProfileComponent,
+  OtherProfileDialogComponent
+} from './other-profile/other-profile.component';
 
 import { ProfileService } from './profile.service';
 import { TabsComponent } from './tabs/tabs.component';
@@ -34,8 +37,13 @@ import { SalesDetailComponent } from './sales-detail/sales-detail.component';
     MatIconModule,
     SharedModule
   ],
-  exports: [ProfileComponent, ProfileDialogComponent,OtherProfileComponent,OtherProfileDialogComponent],
-  entryComponents: [ProfileDialogComponent,OtherProfileDialogComponent],
+  exports: [
+    ProfileComponent,
+    ProfileDialogComponent,
+    OtherProfileComponent,
+    OtherProfileDialogComponent
+  ],
+  entryComponents: [ProfileDialogComponent, OtherProfileDialogComponent],
   declarations: [
     ProfileComponent,
     ProfileDialogComponent,
@@ -44,8 +52,8 @@ import { SalesDetailComponent } from './sales-detail/sales-detail.component';
     TabsComponent,
     ProfileDetailComponent,
     ShopingDetailComponent,
-    SalesDetailComponent,
+    SalesDetailComponent
   ],
   providers: [ProfileService]
 })
-export class ProfilesModule { }
+export class ProfilesModule {}

@@ -7,5 +7,9 @@ export const environment = {
     projectId: 'bam-mx',
     storageBucket: '',
     messagingSenderId: '409700494601'
+  },
+  algolia: {
+    appId: 'DJRF51C15M',
+    apiKey: '4f17eb106e440860264dea00604077c9'
   }
 };

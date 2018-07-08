@@ -11,10 +11,12 @@
   },
   "main": "lib/index.js",
   "dependencies": {
+    "algoliasearch": "^3.29.0",
     "firebase-admin": "~5.12.1",
     "firebase-functions": "^1.0.3"
   },
   "devDependencies": {
+    "@types/algoliasearch": "^3.27.5",
     "tslint": "^5.8.0",
     "typescript": "^2.5.3"
   },

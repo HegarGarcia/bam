@@ -1,6 +1,6 @@
 <form class="searchbar">
-  <mat-form-field class="full-width">
-    <input matInput type="text" [(ngModel)]="value" name="standalone">
+  <mat-form-field class="full-width" floatLabel="never">
+    <input matInput placeholder="Buscar" type="text" [(ngModel)]="value" name="standalone" (keyup)="navegate()">
     <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
       <mat-icon>close</mat-icon>
     </button>

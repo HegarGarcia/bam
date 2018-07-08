@@ -1,0 +1,3 @@
+<div [className]="(isHandset | async) ? 'query--mobile' : 'query--desktop'">
+  <app-card *ngFor="let product of (products | async)" [data]="product"></app-card>
+</div>

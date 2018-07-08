@@ -1,36 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+
+import { ProductDetailService } from '../product-detail.service';
+import { Observable } from 'rxjs';
+import { IProduct } from '@interfaces/product';
+import { IProfile } from '@interfaces/profiles';
+import { AuthService } from '@core/auth/auth.service';
+
 @Component({
   selector: 'app-prod-desc',
   templateUrl: './prod-desc.component.html',
   styleUrls: ['./prod-desc.component.css']
 })
 export class ProdDescComponent implements OnInit {
-  public Producto: string;
-  public NombreProveedor: string;
-  public fechaPlantacion: Date;
-  public fechaCosecha: Date;
-  public cantidad: number;
-  public medida: string;
-  prodDescriptionForm: FormGroup;
-  constructor(private fb: FormBuilder) {
-    this.Producto = 'Hola';
-    this.NombreProveedor = 'hasdf';
-  }
+  public prodDescriptionForm: FormGroup;
+  public product: Observable<IProduct>;
+  public user: Observable<IProfile>;
 
-  formatLabel(value: number | null) {
-    if (!value) {
-      return 0;
-    }
-
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'k';
-    }
-
-    return value;
-  }
+  constructor(
+    private fb: FormBuilder,
+    private productDetail: ProductDetailService,
+    private route: ActivatedRoute,
+    public auth: AuthService
+  ) {}
 
   ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.product = this.productDetail.getProduct(id);
+
+    this.product.subscribe(
+      data => (this.user = this.productDetail.getUser(data.propietario))
+    );
+
     this.prodDescriptionForm = this.fb.group({
       cantidadAComprar: '0'
     });

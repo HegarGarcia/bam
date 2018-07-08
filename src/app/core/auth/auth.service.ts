@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { IProfile } from '../../interfaces/profiles';
 
 import { auth } from 'firebase/app';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { Router } from '@angular/router';
 
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -20,7 +20,7 @@ export class AuthService {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private router: Router,
+    private location: Location,
     private afs: AngularFirestore
   ) {
     this.user = this.afAuth.authState.pipe(
@@ -47,12 +47,13 @@ export class AuthService {
         email: credentials.user.email,
         seller: false
       };
-      return this.afs.doc(`users/${user.uid}`).set(user, { merge: true });
+      this.afs.doc(`users/${user.uid}`).set(user, { merge: true });
+      return this.location.back();
     });
   }
 
   signOut() {
-    this.afAuth.auth.signOut().then(() => this.router.navigate(['/']));
+    this.afAuth.auth.signOut();
   }
 
   get userValue() {
