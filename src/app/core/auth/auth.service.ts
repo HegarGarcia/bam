@@ -34,7 +34,7 @@ export class AuthService {
 
   googleLogin(): Promise<any> {
     const provider = new auth.GoogleAuthProvider();
-    
+
     return this.afAuth.auth.signInWithPopup(provider).then(credentials => {
       const user: IProfile = {
         uid: credentials.user.uid,
@@ -42,11 +42,8 @@ export class AuthService {
         photoURL: credentials.user.photoURL,
         email: credentials.user.email
       };
-      this.afs.doc(`users/${user.uid}`).set(user);
-      this.user = of(credentials.user);
-      return this.user;
+      return this.afs.doc(`users/${user.uid}`).set(user, { merge: true });
     });
-
   }
 
   signOut() {
