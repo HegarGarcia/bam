@@ -8,23 +8,33 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 
 import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  public user: Observable<firebase.User>;
+  public user: Observable<IProfile>;
 
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
     private afs: AngularFirestore
   ) {
-    this.user = this.afAuth.authState;
+    this.user = this.afAuth.authState.pipe(
+      switchMap(user => {
+        if (user) {
+          return this.afs.doc<IProfile>(`users/${user.uid}`).valueChanges();
+        } else {
+          return of(null);
+        }
+      })
+    );
   }
 
   googleLogin(): Promise<any> {
     const provider = new auth.GoogleAuthProvider();
+    
     return this.afAuth.auth.signInWithPopup(provider).then(credentials => {
       const user: IProfile = {
         uid: credentials.user.uid,
@@ -36,11 +46,10 @@ export class AuthService {
       this.user = of(credentials.user);
       return this.user;
     });
+
   }
 
-  withPasswordAndEmail(email: string, password: string) {}
-
   signOut() {
-    this.afAuth.auth.signOut().then(() => (this.user = null));
+    this.afAuth.auth.signOut().then(() => this.router.navigate(['/']));
   }
 }
