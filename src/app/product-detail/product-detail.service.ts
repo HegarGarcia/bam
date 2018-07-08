@@ -18,6 +18,6 @@ export class ProductDetailService {
   }
 
   category(query) {
-    return this.afs.collection<IProduct>('productos', ref => ref.where('tipo', '==', query)).valueChanges();
+    return this.afs.collection<IProduct>('productos', ref => ref.where('categoria', '==', query)).valueChanges();
   }
 }
