@@ -33,10 +33,11 @@ h2 {
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 10px;
+    padding: 40px;
   }
   .grid-item {
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    font-size: 24px;
   }
