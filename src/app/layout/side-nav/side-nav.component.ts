@@ -23,11 +23,11 @@ export class SideNavComponent implements OnInit {
   ) {
     this.categories = [
       { name: 'Frutas', link: '/category/fruta' },
-      { name: 'Verduras' },
-      { name: 'Granos' },
-      { name: 'Fertilizantes ' },
-      { name: 'Flores' },
-      { name: 'Plantas o Arboles' }
+      { name: 'Verduras', link: '/category/verdura' },
+      { name: 'Granos', link: '/category/semilla' },
+      { name: 'Fertilizantes', link: '/category/fertilizante' },
+      { name: 'Flores', link: '/category/flor' },
+      { name: 'Plantas o Arboles', link: '/category/planta' }
     ];
     this.isHandset$ = this.breakingPoints.isHandset;
   }
