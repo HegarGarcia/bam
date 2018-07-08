@@ -10,11 +10,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent {
-  feed$: Observable<any>;
   isHandset;
+  newest;
+  best;
+  verified;
 
-  constructor(public breaking: BreakingPointsService, private feed: ProductsFeedService) {
-    this.feed$ = feed.sellersRef;
+  constructor(
+    public breaking: BreakingPointsService,
+    public feed: ProductsFeedService
+  ) {
     this.isHandset = this.breaking.isHandset;
+    this.feed.getNewest().subscribe(raw => (this.newest = raw));
+    this.feed.getBest().subscribe(raw => (this.best = raw));
+    this.feed.getVerifed().subscribe(raw => (this.verified = raw));
   }
 }
