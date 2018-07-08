@@ -5,7 +5,7 @@
 }
 
 .login-form {
-  max-width: 250px;
+  max-width: 300px;
   max-height: 220px;
   margin: 0 auto;
 }
@@ -14,8 +14,9 @@
   width: 100%;
 }
 
-.login-form__google {
-  max-width: 32px;
+.login-form__submit {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .login-form__google--wrapper {
@@ -23,7 +24,6 @@
   text-align: center;
 }
 
-.login-form__submit {
-  margin: 0 auto;
-  text-align: center;
+.login-form__google {
+  max-width: 250px;
 }

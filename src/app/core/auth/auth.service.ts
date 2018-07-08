@@ -25,20 +25,17 @@ export class AuthService {
 
   googleLogin(): Promise<any> {
     const provider = new auth.GoogleAuthProvider();
-    return this.afAuth.auth
-      .signInWithPopup(provider)
-      .then(credentials => {
-        const user: IProfile = {
-          uid: credentials.user.uid,
-          name: credentials.user.displayName,
-          photoURL: credentials.user.photoURL,
-          email: credentials.user.email
-        };
-        this.afs.doc(`users/${user.uid}`).set(user);
-        this.user = of(credentials.user);
-        return this.user;
-      })
-      .catch(err => console.error(err));
+    return this.afAuth.auth.signInWithPopup(provider).then(credentials => {
+      const user: IProfile = {
+        uid: credentials.user.uid,
+        name: credentials.user.displayName,
+        photoURL: credentials.user.photoURL,
+        email: credentials.user.email
+      };
+      this.afs.doc(`users/${user.uid}`).set(user);
+      this.user = of(credentials.user);
+      return this.user;
+    });
   }
 
   withPasswordAndEmail(email: string, password: string) {}
