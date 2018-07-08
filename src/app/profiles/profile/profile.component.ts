@@ -1,7 +1,8 @@
 import { Component, Inject, Input } from '@angular/core';
 import { BreakingPointsService } from '@core/breaking-points/breaking-points.service';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { ProfileService } from '../profile.service';
+import { Router } from "@angular/router";
 
 export interface DialogData {
   uid: any;
@@ -41,7 +42,13 @@ export class ProfileComponent {
 })
 export class ProfileDialogComponent {
   isHandset;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public breaking: BreakingPointsService) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public breaking: BreakingPointsService, public dialogRef: MatDialogRef<ProfileDialogComponent>,
+    private route: Router) {
     this.isHandset = this.breaking.isHandset;
+  }
+
+  closeDialog() {
+    this.route.navigate(['addProduct']);
+    this.dialogRef.close('Pizza!');
   }
 }

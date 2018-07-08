@@ -1,0 +1,25 @@
+<div class="login">
+  <div [className]="(isHandset | async) ? 'form-mobile' : 'form-desktop'">
+    <mat-card>
+      <form [formGroup]="" style="text-align: center">
+        <mat-form-field class="form-content">
+          <input matInput formControName="name" placeholder="Nombre" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="form-content">
+          <input matInput formControName="cantidad" type="number" placeholder="Cantidad" required>
+        </mat-form-field>
+        <br>
+        <app-form-select></app-form-select>
+        <br>
+        <mat-form-field class="form-content">
+          <textarea matInput formControName="desc" placeholder="Descripcion"></textarea>
+        </mat-form-field>
+        <br>
+        <div class="login-form__google--wrapper">
+          <button mat-raised-button type="submit" color="primary" (click)="addProduct()">Aceptar</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
