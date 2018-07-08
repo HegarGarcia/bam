@@ -17,5 +17,58 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 150%;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-display: 200;
+  size: 60px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: auto;
+}
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.item7 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.flex-container {
+  display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.flex-container > div {
+  width: 100%;
+  margin: 10px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.centerimg {
+  max-width: 100%;
+  height: auto;
   width: 40%;
 }
+
+.mainSmall {
+    padding: 20px;
+  }

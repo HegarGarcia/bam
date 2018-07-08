@@ -15,10 +15,12 @@ import {
   ProfileComponent,
   ProfileDialogComponent
 } from './profile/profile.component';
+
 import {
   OtherProfileComponent,
   OtherProfileDialogComponent
 } from './other-profile/other-profile.component';
+
 
 import { ProfileService } from './profile.service';
 import { TabsComponent } from './tabs/tabs.component';
