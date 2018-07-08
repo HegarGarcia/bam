@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ProfilesModule } from './profiles.module';
 
 import { AngularFirestore } from 'angularfire2/firestore';
 

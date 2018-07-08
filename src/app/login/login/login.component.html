@@ -1,6 +1,6 @@
 <div class="login">
     <mat-card class="login-form">
-        <form [formGroup]="loginForm">
+        <!-- <form [formGroup]="loginForm">
             <mat-form-field class="login-form__field">
                 <input matInput placeholder="Email" formControlName="email" type="email">
 
@@ -21,11 +21,11 @@
                 <button mat-raised-button type="submit" [disabled]="loginForm.invalid" color="primary">Iniciar Sesión</button>
             </div>
             <br>
-        </form>
+        </form> -->
         <div class="login-form__google--wrapper">
-                <button mat-icon-button (click)="logInWithGoogle()">
-                    <img class="login-form__google" src="../../../assets/google_logo.png" alt="google logo">
-                </button>
-            </div>
+            <button mat-flat-button color="white" (click)="logInWithGoogle()">
+                <img class="login-form__google" src="../../../assets/google_login.png" alt="google logo">
+            </button>
+        </div>
     </mat-card>
 </div>

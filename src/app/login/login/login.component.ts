@@ -32,7 +32,10 @@ export class LoginComponent implements OnInit {
   }
 
   logInWithGoogle() {
-    this.auth.googleLogin().then(() => this.router.navigate(['/']));
+    this.auth
+      .googleLogin()
+      .then(() => this.router.navigate(['/']))
+      .catch(err => console.error(err));
   }
 
   get email() {
