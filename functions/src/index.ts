@@ -16,8 +16,11 @@ export const setValidation = functions.firestore
         if (data.exists) {
           const user = data.data();
 
-          return snap.ref.update({ verified: user.verified });
+          return snap.ref.set(
+            { id: snap.id, verified: user.verified },
+            { merge: true }
+          );
         }
-        return null;
+        return snap.ref.set({ id: snap.id }, { merge: true });
       });
   });
