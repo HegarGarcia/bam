@@ -1,6 +1,7 @@
 # BAM - Bolsa Agrícola Mexicana (Mexican Agricultural Exchange)
 
-Mexican Agricultural Exchange is a web platform to connect farm producers and buyers from the moment the plantation starts.
+Mexican Agricultural Exchange is a web platform to connect farm producers and buyers.
+
 Allowing the farmer to sell and promote their whole plantation and letting investors buy parts at wholesale price.
 
 ## Techonologies
