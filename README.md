@@ -1,27 +1,30 @@
-# BAM
-Bolsa Agricola Mexicana
+# BAM - Bolsa Agrícola Mexicana (Mexican Agricultural Exchange)
 
-Creamos una Bolsa Agricola Mexicana, en donde los productores agricolas podrán registrarse para vender sus productos al mayoreo, los proveedores pueden publicar y comercializar su mercancia desde el momento en el que la plantaron, hasta en el momento de cosecha, y asi las personas interesadas en dicho producto puedan apartarlo desde el inicio.
+Mexican Agricultural Exchange is a web platform to connect farm producers and buyers from the moment the plantation starts.
+Allowing the farmer to sell and promote their whole plantation and letting investors buy parts at wholesale price.
 
-# Tecnologias utilizadas
-• Angular
+## Techonologies
 
-• Firebase
+### Angular
 
-• Firebase Cloud Functions
+Angular is a web development framework created by Google powered by Typescript, to generate dynamic and scalable web apps with a component based architecture.
 
-• Firebase Cloud Hosting
+### Firebase
 
-• Algolia
+Google serverless platform focused in easy to use and scalable services as authentication, databases and storage.
 
+### Algolia
 
-• Angular
+Serverless search engine easy to implement with firebase and angular apps.
 
-• Angular Material
+### RxJS
 
-• RxJS
+RxJS is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code.
 
-# Colores
-Primary: #3f51b5
-Accent: #ff4081
-Backgroud: #f2f2f2
+## Theme
+
+| Theme color | Hex Color |
+|-------------|-----------|
+| Primary     | #3f51b5   |
+| Accent      | #ff4081   |
+| Background  | #f2f2f2   |
